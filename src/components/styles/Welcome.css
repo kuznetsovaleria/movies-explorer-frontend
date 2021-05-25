@@ -1,0 +1,157 @@
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.welcome__logo {
+  max-width: 38px;
+  max-height: 38px;
+}
+
+.welcome__form {
+  min-width: 396px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome__title {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 500;
+}
+
+.welcome__subtitle {
+  margin: 24px 0 5px;
+  color: #a0a0a0;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+.welcome__subtitle:first-of-type {
+  margin-top: 0;
+}
+
+.welcome__input {
+  border: none;
+  outline: none;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.welcome__input:valid {
+  border-bottom: 1px solid #2be080;
+}
+
+.welcome__input:invalid {
+  color: #ee3465;
+}
+
+/* .welcome__input:invalid:focus:not(:placeholder-shown) {
+  border-bottom: 1px solid #EE3465;
+  color: #EE3465
+} */
+
+.welcome__error {
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+  margin: 6px 0 0;
+  display: block;
+  box-sizing: border-box;
+}
+
+.welcome__button {
+  background-color: #2be080;
+  border-radius: 3px;
+  color: white;
+  min-height: 45px;
+  border: none;
+  margin: 152px 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.welcome__button_login {
+  margin: 221px 0 0;
+}
+
+.welcome__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.5s linear;
+}
+
+.welcome__signin {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.welcome__link-to-signin {
+  text-decoration: none;
+  color: #2be080;
+  margin: 16px 0 0 6px;
+  padding: 0;
+}
+
+.welcome__link-to-signin:hover {
+  opacity: 0.6;
+  transition: opacity 0.5s linear;
+}
+
+@media screen and (max-width: 768px) {
+  .welcome {
+    padding: 232px 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .welcome {
+    padding: 56px 0 30px;
+  }
+
+  .welcome__form {
+    min-width: 260px;
+    margin: 0;
+  }
+
+  .welcome__logo {
+    align-self: center;
+  }
+
+  .welcome__title {
+    text-align: center;
+    margin: 50px auto 80px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .welcome__button {
+    margin: 240px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .welcome__button_login {
+    margin: 309px 0 0;
+  }
+
+  .welcome__signin {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

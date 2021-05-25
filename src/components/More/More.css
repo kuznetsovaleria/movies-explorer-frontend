@@ -1,0 +1,30 @@
+.more {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-height: 166px;
+}
+
+.more__button {
+  width: 100%;
+  min-height: 36px;
+  background-color: #f9f9f9;
+  margin: 50px 0 80px;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  font-weight: 500;
+  border-style: none;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+}
+
+.more__button:hover {
+  opacity: 0.5;
+  transition: opacity 0.5s linear;
+}

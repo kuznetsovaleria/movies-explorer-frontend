@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c7d306a3.chunk.css",
+    "main.js": "/static/js/main.93634d4b.chunk.js",
+    "main.js.map": "/static/js/main.93634d4b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0896debe.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0896debe.js.map",
+    "static/js/2.fc5506c1.chunk.js": "/static/js/2.fc5506c1.chunk.js",
+    "static/js/2.fc5506c1.chunk.js.map": "/static/js/2.fc5506c1.chunk.js.map",
+    "static/js/3.80859e82.chunk.js": "/static/js/3.80859e82.chunk.js",
+    "static/js/3.80859e82.chunk.js.map": "/static/js/3.80859e82.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.c7d306a3.chunk.css.map": "/static/css/main.c7d306a3.chunk.css.map",
+    "static/js/2.fc5506c1.chunk.js.LICENSE.txt": "/static/js/2.fc5506c1.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Inter-Regular.fc49d131.woff",
+    "static/media/arrow.2f133fb2.svg": "/static/media/arrow.2f133fb2.svg",
+    "static/media/Header.css": "/static/media/burger-button.08035af1.svg",
+    "static/media/card-image.3be77b0d.svg": "/static/media/card-image.3be77b0d.svg",
+    "static/media/Navigation.css": "/static/media/close-icon.80dfd5bd.svg",
+    "static/media/delete-btn.d197a75e.svg": "/static/media/delete-btn.d197a75e.svg",
+    "static/media/find-button-green.e7c2850a.svg": "/static/media/find-button-green.e7c2850a.svg",
+    "static/media/landing-logo.48502063.svg": "/static/media/landing-logo.48502063.svg",
+    "static/media/logo.b93cbaed.svg": "/static/media/logo.b93cbaed.svg",
+    "static/media/me.448d2139.jpeg": "/static/media/me.448d2139.jpeg",
+    "static/media/save-movie.10be8b30.svg": "/static/media/save-movie.10be8b30.svg",
+    "static/media/saved-movie.87ef3824.svg": "/static/media/saved-movie.87ef3824.svg",
+    "static/media/search-icon-white.338db03a.svg": "/static/media/search-icon-white.338db03a.svg",
+    "static/media/user-icon.b054c9b2.svg": "/static/media/user-icon.b054c9b2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0896debe.js",
+    "static/js/2.fc5506c1.chunk.js",
+    "static/css/main.c7d306a3.chunk.css",
+    "static/js/main.93634d4b.chunk.js"
+  ]
+}

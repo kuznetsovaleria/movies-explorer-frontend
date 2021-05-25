@@ -1,0 +1,27 @@
+.movies {
+  padding: 0 70px;
+}
+
+.movies__search {
+  margin: 70px 0 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .movies {
+    padding: 0 30px;
+  }
+
+  .movies__search {
+    margin: 86px 0 62px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .movies {
+    padding: 0 10px;
+  }
+
+  .movies__search {
+    margin: 98px 0 50px;
+  }
+}
