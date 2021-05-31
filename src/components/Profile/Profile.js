@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header/Header.js";
 import "./Profile.css";
 
-function Profile({ name, email }) {
+function Profile({ name, email, onSignOut }) {
   return (
     <>
       <Header />
@@ -38,7 +38,8 @@ function Profile({ name, email }) {
             />
           </div>
           <button className="profile__button">Редактировать</button>
-          <button className="profile__button profile__button_signout">
+          <button className="profile__button profile__button_signout"
+          onClick={onSignOut}>
             Выйти из аккаунта
           </button>
         </form>

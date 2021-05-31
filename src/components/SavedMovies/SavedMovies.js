@@ -4,9 +4,13 @@ import "../Movies/Movies.css";
 import SearchForm from "../SearchForm/SearchForm.js";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox.js";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.js";
+import Header from "../Header/Header.js";
+import Footer from "../Footer/Footer.js";
 
 function SavedMovies() {
   return (
+    <>
+    <Header />
     <section className="saved-movies movies">
       <div className="saved-movies__search movies__search">
         <SearchForm />
@@ -14,6 +18,8 @@ function SavedMovies() {
       </div>
       <MoviesCardList />
     </section>
+    <Footer />
+    </>
   );
 }
 

@@ -13,6 +13,7 @@
 
 .welcome__form {
   min-width: 396px;
+  max-width: 396px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,6 +70,20 @@
 
 .welcome__button {
   background-color: #2be080;
+  border-radius: 3px;
+  color: white;
+  min-height: 45px;
+  border: none;
+  margin: 152px 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.welcome__button_disabled {
+  background-color: #a0a0a0;
   border-radius: 3px;
   color: white;
   min-height: 45px;
