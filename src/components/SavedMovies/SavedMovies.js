@@ -7,10 +7,10 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList.js";
 import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";
 
-function SavedMovies() {
+function SavedMovies({ loggedIn }) {
   return (
     <>
-    <Header />
+    <Header loggedIn={loggedIn}/>
     <section className="saved-movies movies">
       <div className="saved-movies__search movies__search">
         <SearchForm />

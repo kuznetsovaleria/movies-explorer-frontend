@@ -4,7 +4,7 @@ import "./Profile.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext.js";
 import { useFormWithValidation } from "../../hooks/useForm.js";
 
-function Profile({ onSignOut, onUpdateUser }) {
+function Profile({ onSignOut, onUpdateUser, loggedIn }) {
   const {
     values,
     isValid,
@@ -49,7 +49,7 @@ function Profile({ onSignOut, onUpdateUser }) {
 
   return (
     <>
-      <Header />
+      <Header loggedIn={loggedIn}/>
       <section className="profile">
         <h2 className="profile__title">Привет, {currentUser.name}!</h2>
         <form className="profile__form" onSubmit={handleSubmit} noValidate>

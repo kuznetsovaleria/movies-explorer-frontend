@@ -7,10 +7,10 @@ import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";
 import "./Movies.css";
 
-function Movies() {
+function Movies({ loggedIn }) {
   return (
     <>
-      <Header />
+      <Header loggedIn={loggedIn}/>
       <section className="movies">
         <div className="movies__search">
           <SearchForm />
