@@ -102,6 +102,19 @@ function App() {
     }
   }, [loggedIn]);
 
+  // РЕДАКТРИРОВАТЬ ПРОФИЛЬ
+  function handleUpdateUser(userInfo) {
+    mainApi
+    .editUserInfo(userInfo)
+      .then((userData) => {
+        setCurrentUser(userData)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -139,6 +152,7 @@ function App() {
             loggedIn={loggedIn}
             component={Profile}
             onSignOut={handleSignOut}
+            onUpdateUser={handleUpdateUser}
           />
 
           <Route path="*">
