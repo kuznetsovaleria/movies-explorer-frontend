@@ -1,5 +1,7 @@
+import { MOVIES_URL } from "../utils/constants.js";
+
 export const getInitialMovies = () => {
-  return fetch(`${"https://api.nomoreparties.co/beatfilm-movies"}`, {
+  return fetch(`${MOVIES_URL}`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

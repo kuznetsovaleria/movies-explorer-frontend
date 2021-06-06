@@ -1,10 +1,12 @@
 import React from "react";
 import "./FilterCheckbox.css";
 
-function FilterCheckbox() {
+function FilterCheckbox({ isShortMovie, handleShowShortMovie }) {
   return (
     <div className="filter-checkbox">
       <input
+        checked={isShortMovie}
+        onChange={handleShowShortMovie}
         type="checkbox"
         name="checkbox"
         id="checkbox"

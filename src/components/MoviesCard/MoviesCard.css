@@ -1,19 +1,27 @@
 .card {
   max-width: 364px;
-  margin: 0 auto;
+  min-width: 364px;
+  margin: 0;
   background-color: #fdfdfd;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card__group {
+  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   margin: 14px;
   background-color: white;
+  height: 40px;
+  /* max-width: 364px; */
 }
 
 .card__text {
   margin: 0;
+  /* height: 40px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card__name {
@@ -21,7 +29,12 @@
   line-height: 18px;
   font-weight: 500;
   margin: 0;
-  padding-bottom: 9px;
+  max-width: 260px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /* max-height: 20px; */
+  /* padding-bottom: 9px; */
 }
 
 .card__duration {
@@ -44,6 +57,41 @@
   transition: opacity 0.5s linear;
 }
 
+.card__button_to-save {
+  background-image: url('../../images/save-movie.svg');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+.card__button_saved {
+  background-image: url('../../images/saved-movie.svg');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+.card__button_to-delete {
+  background-image: url('../../images/delete-btn.svg');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+.card__image {
+  width: 364px;
+  height: 203px;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     max-width: 339px;
@@ -56,7 +104,7 @@
 
 @media screen and (max-width: 425px) {
   .card {
-    max-width: 300px;
+    min-width: 300px;
     margin: 0 auto;
   }
 

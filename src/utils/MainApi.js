@@ -1,3 +1,5 @@
+import {BASE_URL} from "../utils/constants.js";
+
 export class MainApi {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -32,6 +34,7 @@ export class MainApi {
       }),
     }).then(this._handleOriginalResponse);
   }
+
   getSavedMovies() {
     return fetch(`${this._baseUrl}/movies`, {
       headers: {
@@ -51,8 +54,8 @@ export class MainApi {
     }).then(this._handleOriginalResponse);
   }
 
-  deleteMovie(_id) {
-    return fetch(`${this._baseUrl}/movies/${_id}`, {
+  deleteMovie(movieId) {
+    return fetch(`${this._baseUrl}/movies/${movieId}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -62,7 +65,8 @@ export class MainApi {
 }
 
 const mainApi = new MainApi({
-  baseUrl: "https://api.kuznetsova.movies.nomoredomains.icu",
+  // baseUrl: "https://api.kuznetsova.movies.nomoredomains.icu",
+  baseUrl: BASE_URL,
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
