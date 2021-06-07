@@ -11,8 +11,8 @@ function SearchForm({
   showFailedSearchMessage,
   showSearchAmongSavedMovies,
 }) {
-  const [movieName, setMovieName] = React.useState([]);
-  const [savedMovieName, setSavedMovieName] = React.useState([]);
+  const [movieName, setMovieName] = React.useState("");
+  const [savedMovieName, setSavedMovieName] = React.useState("");
   const [errors, setErrors] = React.useState({});
 
   function handleChangeMovieInput(evt) {

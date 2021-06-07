@@ -31,16 +31,16 @@ function MoviesCard({
   function handleSaveClick() {
     if (!isMovieSaved) {
       handleSaveMovie({
-        country: card.country,
+        country: card.country || "no country",
         director: card.director,
         duration: card.duration,
         year: card.year,
         description: card.description,
         image: card.image.url ? `${MOVIE_IMG_URL}${card.image.url}` : noImage,
-        trailer: card.trailerLink,
+        trailer: card.trailerLink || "trailer",
         movieId: card.id,
-        nameRU: card.nameRU,
-        nameEN: card.nameEN,
+        nameRU: card.nameRU || "no nameRU",
+        nameEN: card.nameEN || "no nameEN",
         thumbnail: card.image.formats.thumbnail.url
           ? `${MOVIE_IMG_URL}${card.image.formats.thumbnail.url}`
           : noImage,

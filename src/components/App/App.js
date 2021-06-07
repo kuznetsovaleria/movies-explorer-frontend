@@ -23,7 +23,9 @@ function App() {
   const history = useHistory();
   const [movies, setMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
-  const [allFilteredMovies, setAllFilteredMovies] = React.useState([]);
+  const [allFilteredMovies, setAllFilteredMovies] = React.useState(
+    JSON.parse(localStorage.getItem("filteredMovies")) || []
+  );
   const [savedFilteredMovies, setSavedFilteredMovies] = React.useState([]);
   const [isShortMovie, setIsShortMovie] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -161,6 +163,7 @@ function App() {
           movie.nameEN?.toLowerCase().includes(search.toLowerCase())
         );
       });
+      localStorage.setItem("filteredMovies", JSON.stringify(filteredMovie));
       return setAllFilteredMovies(filteredMovie);
     }
   }

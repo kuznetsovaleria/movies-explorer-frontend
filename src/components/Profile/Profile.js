@@ -12,6 +12,7 @@ function Profile({ onSignOut, onUpdateUser, loggedIn }) {
     setValues,
     setIsValid,
     resetForm,
+    errors
   } = useFormWithValidation();
 
   const currentUser = React.useContext(CurrentUserContext);
@@ -65,13 +66,14 @@ function Profile({ onSignOut, onUpdateUser, loggedIn }) {
               maxLength="40"
               placeholder="Имя"
               onChange={handleInputChange}
+              
               required
               autoComplete="off"
             />
-            {/* <span id="profile-name-error" className="welcome__error">
-              {errors.name || ""}
-            </span> */}
           </div>
+          <span id="profile-name-error" className="profile__error">
+              {errors.name || ""}
+            </span>
           <div className="profile__form-row">
             <p className="profile__subtitle">E-mail</p>
             <input
@@ -87,10 +89,10 @@ function Profile({ onSignOut, onUpdateUser, loggedIn }) {
               required
               autoComplete="off"
             />
-            {/* <span id="profile-email-error" className="welcome__error">
-              {errors.name || ""}
-            </span> */}
           </div>
+          <span id="profile-email-error" className="profile__error">
+              {errors.email || ""}
+            </span>
           <button className={buttonClassName}>
             {isValid ? "Сохранить" : "Редактировать"}
           </button>
