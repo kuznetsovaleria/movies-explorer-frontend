@@ -2,12 +2,37 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Welcome.css";
 import logo from "../../images/logo.svg";
+import { useFormWithValidation } from "../../hooks/useForm.js";
 
-function Login() {
+function Login({ onLogin }) {
+  const { values, errors, isValid, handleInputChange, resetForm } =
+    useFormWithValidation();
+
+  React.useEffect(() => {
+    resetForm();
+  }, [resetForm]);
+
+  // ОБРАБОТКА САБМИТА
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    if (!values.email || !values.password) {
+      return;
+    }
+    onLogin(values);
+  }
+
+  const buttonClassName = `${
+    isValid ? "welcome__button" : "welcome__button_disabled"
+  }`;
+
   return (
     <section className="welcome welcome_login">
-      {/* <img className="welcome__logo" src={logo} alt="Логотип" /> */}
-      <form className="welcome__form" autoComplete="off" noValidate>
+      <form
+        className="welcome__form"
+        onSubmit={handleSubmit}
+        autoComplete="off"
+        noValidate
+      >
         <img className="welcome__logo" src={logo} alt="Логотип" />
         <h3 className="welcome__title">Рады видеть!</h3>
         <p className="welcome__subtitle">E-mail</p>
@@ -16,23 +41,29 @@ function Login() {
           name="email"
           type="email"
           className="welcome__input"
+          value={values.email || ""}
+          onChange={handleInputChange}
           required
         ></input>
-        <span id="login-email-error" className="welcome__error"></span>
+        <span id="login-email-error" className="welcome__error">
+          {errors.email}
+        </span>
         <p className="welcome__subtitle">Пароль</p>
         <input
           id="login-password"
           name="password"
           type="password"
           className="welcome__input"
-          minLength="6"
+          value={values.password || ""}
+          onChange={handleInputChange}
+          minLength="8"
           maxLength="20"
           required
         ></input>
         <span id="login-password-error" className="welcome__error">
-          Что-то пошло не так...
+          {errors.password}
         </span>
-        <button className="welcome__button welcome__button_login" type="submit">
+        <button className={buttonClassName} type="submit">
           Войти
         </button>
       </form>

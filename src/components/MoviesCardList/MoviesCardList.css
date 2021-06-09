@@ -1,6 +1,6 @@
 .cards {
   padding: 0;
-  margin: 0 0 30px;
+  margin: 0;
 }
 
 .cards__grid {
@@ -10,9 +10,51 @@
   row-gap: 30px;
   column-gap: 24px;
   margin: 0;
+  margin-bottom: 50px;
   justify-content: center;
   justify-items: center;
   padding: 0;
+  
+}
+
+.cards__more {
+  width: 100%;
+  min-height: 36px;
+  background-color: #f9f9f9;
+  margin: 80px 0;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  font-weight: 500;
+  border-style: none;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+}
+
+.cards__more:hover {
+  opacity: 0.5;
+  transition: opacity 0.5s linear;
+}
+
+.cards__more_invisible {
+  display: none;
+}
+
+.cards__error {
+  font-size: 15px;
+  line-height: 15px;
+  /* font-weight: 500; */
+  color: #2BE080;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cards__error_invisible {
+  display: none;
 }
 
 @media screen and (max-width: 1224px) {

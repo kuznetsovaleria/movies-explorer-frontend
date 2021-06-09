@@ -66,6 +66,10 @@
   cursor: pointer;
 }
 
+.profile__button_disabled {
+  color: #a0a0a0;
+}
+
 .profile__button_signout {
   font-weight: 500;
   margin: 0 0 70px;
@@ -75,6 +79,13 @@
 .profile__button:hover {
   opacity: 0.6;
   transition: opacity 0.5s linear;
+}
+
+.profile__error {
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+  margin: 0;
 }
 
 @media screen and (max-width: 768px) {

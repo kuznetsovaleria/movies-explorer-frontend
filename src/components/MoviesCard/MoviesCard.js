@@ -1,32 +1,117 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
-import cardImage from "../../images/card-image.svg";
-import saveMovieIcon from "../../images/save-movie.svg";
-import savedMovieIcon from "../../images/saved-movie.svg";
-import deleteMovieIcon from "../../images/delete-btn.svg";
+import { MOVIE_IMG_URL } from "../../utils/constants.js";
+import noImage from "../../images/noimage.jpeg";
 
-function MoviesCard() {
-  const { pathname } = useLocation();
+function MoviesCard({
+  card,
+  handleSaveMovie,
+  handleDeleteMovie,
+  savedMovies,
+  isMoviesSaved,
+}) {
+  const [isMovieSaved, setIsMovieSaved] = React.useState(false);
+  const buttonClassName = `${
+    isMovieSaved ? "card__button_saved" : "card__button_to-save"
+  }`;
 
-  const isSaved = true; //для проверки вёрстки поменять на false
-  // const isSaved = false;
+  const setLikes = React.useCallback(() => {
+    const isMovieLiked = savedMovies.find((movie) => movie.movieId === card.id);
+    if (isMovieLiked) {
+      setIsMovieSaved(true);
+    } else {
+      setIsMovieSaved(false);
+    }
+  }, [card.id, savedMovies]);
 
-  const movieIcon = isSaved ? saveMovieIcon : savedMovieIcon;
-  const cardIcon = pathname === "/movies" ? movieIcon : deleteMovieIcon;
+  React.useEffect(() => {
+    setLikes();
+  }, [setLikes]);
+
+  function handleSaveClick() {
+    if (!isMovieSaved) {
+      handleSaveMovie({
+        country: card.country || "no country",
+        director: card.director,
+        duration: card.duration,
+        year: card.year,
+        description: card.description,
+        image: card.image.url ? `${MOVIE_IMG_URL}${card.image.url}` : noImage,
+        trailer: card.trailerLink || "trailer",
+        movieId: card.id,
+        nameRU: card.nameRU || "no nameRU",
+        nameEN: card.nameEN || "no nameEN",
+        thumbnail: card.image.formats.thumbnail.url
+          ? `${MOVIE_IMG_URL}${card.image.formats.thumbnail.url}`
+          : noImage,
+      });
+      setIsMovieSaved(true);
+    } else {
+      const savedMovie = savedMovies.find((movie) => movie.movieId === card.id);
+      handleDeleteMovie(savedMovie);
+      setIsMovieSaved(false);
+    }
+  }
+
+  function handleDeleteClick() {
+    handleDeleteMovie(card);
+  }
+
+  function convertDuration(mins) {
+    const hours = Math.trunc(mins / 60);
+    const minutes = mins % 60;
+    return `${hours}ч ${minutes}м`;
+  }
 
   return (
     <article className="card">
-      <div className="card__group">
-        <div className="card__text">
-          <p className="card__name">33 слова о дизайне</p>
-          <p className="card__duration">1ч 47м</p>
-        </div>
-        <button className="card__button">
-          <img src={cardIcon} alt="Сохранить/Удалить" />
-        </button>
-      </div>
-      <img src={cardImage} alt="Стопкадр" className="card__image" />
+      {isMoviesSaved ? (
+        <>
+          <div className="card__group">
+            <div className="card__text">
+              <p className="card__name">{card.nameRU}</p>
+              <p className="card__duration">{convertDuration(card.duration)}</p>
+            </div>
+            <button
+              className="card__button_to-delete"
+              type="button"
+              onClick={handleDeleteClick}
+            ></button>
+          </div>
+          <a href={card.trailer} target="_blank" rel="noreferrer">
+            <img
+              src={`${card.image !== null ? `${card.image}` : noImage}`}
+              alt={card.nameRU}
+              className="card__image"
+            />
+          </a>
+        </>
+      ) : (
+        <>
+          <div className="card__group">
+            <div className="card__text">
+              <p className="card__name">{card.nameRU}</p>
+              <p className="card__duration">{convertDuration(card.duration)}</p>
+            </div>
+            <button
+              className={buttonClassName}
+              type="button"
+              onClick={handleSaveClick}
+            ></button>
+          </div>
+          <a href={card.trailerLink} target="_blank" rel="noreferrer">
+            <img
+              src={`${
+                card.image !== null
+                  ? `${MOVIE_IMG_URL}${card.image.url}`
+                  : noImage
+              }`}
+              alt={card.nameRU}
+              className="card__image"
+            />
+          </a>
+        </>
+      )}
     </article>
   );
 }
